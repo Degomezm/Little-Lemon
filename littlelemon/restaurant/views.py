@@ -14,27 +14,6 @@ def index(request):
     return render(request, 'index.html', {})
 
 
-# class bookingview(APIView):
-#     def get(self, request):
-#         items = Booking.objects.all()
-#         serializer = bookingSerializer(items, many=True)
-#         return Response(serializer.data)  # return JSON
-
-
-# class menuview(APIView):
-#     def get(self, request):
-#         items = Menu.objects.all()
-#         serializer = menuSerializer(items, many=True)
-#         return Response(serializer.data)  # return JSON
-
-#     def post(self, request):
-#         serializer = menuSerializer(data=request.data)
-
-#         if serializer.is_valid():
-#             serializer.save()
-#             return Response({"status": "success", "data": serializer.data})
-
-
 class MenuItemView(ListCreateAPIView):
     permission_classes = [IsAuthenticated]
     queryset = Menu.objects.all()
@@ -42,6 +21,7 @@ class MenuItemView(ListCreateAPIView):
 
 
 class SingleMenuItemView(RetrieveUpdateAPIView, DestroyAPIView):
+    permission_classes = [IsAuthenticated]
     queryset = Menu.objects.all()
     serializer_class = MenuSerializer
 
