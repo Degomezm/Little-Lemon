@@ -1,8 +1,8 @@
 # Little-Lemon
 
-The structure of the project is as follows:
+# The structure of the project is as follows:
 
-/restaurant/
-/restaurant/menu/
-/restaurant/menu/<int:pk>
-/restaurant/booking/
+# /restaurant/
+# /restaurant/menu/
+# /restaurant/menu/<int:pk>
+# /restaurant/booking/
